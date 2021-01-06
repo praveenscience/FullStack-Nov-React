@@ -34,7 +34,9 @@ class App extends Component {
       <div className="App">
         <Praveen>Something Light</Praveen>
         <Praveen dark={true}>Something Dark</Praveen>
-        <Praveen dark={false}>Another Light</Praveen>
+        <Praveen dark={false} className="Header">
+          Another Light
+        </Praveen>
         <div className="container">
           <div className="row">
             <div className="col-12 py-3">
