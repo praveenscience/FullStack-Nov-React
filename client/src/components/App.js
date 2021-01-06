@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "./Header";
 
 class App extends Component {
   state = {
@@ -31,6 +32,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header>Something Light</Header>
+        <Header dark={true}>Something Dark</Header>
+        <Header dark={false}>Another Light</Header>
         <div className="container">
           <div className="row">
             <div className="col-12 py-3">
