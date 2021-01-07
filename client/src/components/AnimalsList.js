@@ -1,11 +1,16 @@
 import React from "react";
+import Animal from "./Animal";
 
 const AnimalsList = ({ List }) => {
   return (
     <div className="Animals">
-      <pre className="border rounded bg-light p-1 my-3">
-        {JSON.stringify(List, null, 2)}
-      </pre>
+      <div className="row my-3">
+        {[...List].length > 0
+          ? [...List].map(animal => (
+              <Animal key={animal.Name}>{animal.Name}</Animal>
+            ))
+          : "Nothing Found"}
+      </div>
     </div>
   );
 };
