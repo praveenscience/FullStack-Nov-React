@@ -32,10 +32,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Praveen>Something Light</Praveen>
-        <Praveen dark={true}>Something Dark</Praveen>
-        <Praveen dark={false} className="Header">
-          Another Light
+        <Praveen dark={true} className="Header">
+          Hello World Life
         </Praveen>
         <div className="container">
           <div className="row">
