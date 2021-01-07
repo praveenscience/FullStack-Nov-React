@@ -4,6 +4,7 @@ import Search from "./Search";
 
 const AnimalsList = ({ List }) => {
   const [Query, setQuery] = useState("");
+  const [Liked, setLiked] = useState([]);
   const AnimalsFilter = animal =>
     Query.length === 0
       ? true
@@ -12,6 +13,11 @@ const AnimalsList = ({ List }) => {
     <div className="Animals">
       <Search Query={Query} setQuery={setQuery} />
       <div className="row my-3">
+        <div className="col-12">
+          <pre className="bg-light border rounded p-3 my-3">
+            {JSON.stringify({ Query, Liked }, null, 2)}
+          </pre>
+        </div>
         {[...List].length > 0
           ? [...List]
               .filter(AnimalsFilter)
