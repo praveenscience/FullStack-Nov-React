@@ -1,9 +1,11 @@
 import React from "react";
 import Animal from "./Animal";
+import Search from "./Search";
 
 const AnimalsList = ({ List }) => {
   return (
     <div className="Animals">
+      <Search />
       <div className="row my-3">
         {[...List].length > 0
           ? [...List].map(animal => (
