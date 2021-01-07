@@ -9,9 +9,8 @@ const AnimalsList = ({ List }) => {
     const newLikes = [...Liked];
     const index = Liked.indexOf(animal);
     if (index > -1) {
-      // remove the animal
+      newLikes.splice(index, 1);
     } else {
-      // add the animal
       newLikes.push(animal);
     }
     setLiked(newLikes);
