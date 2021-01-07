@@ -8,14 +8,12 @@ class App extends Component {
     Loaded: false
   };
   componentDidMount() {
-    setTimeout(() => {
-      GetAllAnimals().then(Animals =>
-        this.setState({
-          Animals,
-          Loaded: true
-        })
-      );
-    }, 1000);
+    GetAllAnimals().then(Animals =>
+      this.setState({
+        Animals,
+        Loaded: true
+      })
+    );
   }
   render() {
     return (
