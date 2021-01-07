@@ -7,7 +7,11 @@ const AnimalsList = ({ List }) => {
       <div className="row my-3">
         {[...List].length > 0
           ? [...List].map(animal => (
-              <Animal key={animal.Name}>{animal.Name}</Animal>
+              <Animal
+                key={animal.Name}
+                Image={animal.Image}
+                Name={animal.Name}
+              />
             ))
           : "Nothing Found"}
       </div>
