@@ -14,6 +14,7 @@ const AnimalsList = ({ List }) => {
       // add the animal
       newLikes.push(animal);
     }
+    setLiked(newLikes);
   };
   const AnimalsFilter = animal =>
     Query.length === 0
@@ -36,6 +37,7 @@ const AnimalsList = ({ List }) => {
                   key={animal.Name}
                   Image={animal.Image}
                   Name={animal.Name}
+                  LikeHandler={LikeHandler}
                 />
               ))
           : "Nothing Found"}
