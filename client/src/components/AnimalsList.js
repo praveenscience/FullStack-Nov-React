@@ -5,6 +5,16 @@ import Search from "./Search";
 const AnimalsList = ({ List }) => {
   const [Query, setQuery] = useState("");
   const [Liked, setLiked] = useState([]);
+  const LikeHandler = animal => {
+    const newLikes = [...Liked];
+    const index = Liked.indexOf(animal);
+    if (index > -1) {
+      // remove the animal
+    } else {
+      // add the animal
+      newLikes.push(animal);
+    }
+  };
   const AnimalsFilter = animal =>
     Query.length === 0
       ? true
