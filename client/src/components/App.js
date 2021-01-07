@@ -16,6 +16,7 @@ class App extends Component {
     );
   }
   render() {
+    const { Animals, Loaded } = this.state;
     return (
       <div className="App">
         <Praveen dark={true} className="Header">
@@ -24,7 +25,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              {this.state.Loaded ? (
+              {Loaded ? (
                 <pre className="border rounded bg-light p-1 my-3">
                   {JSON.stringify(this.state, null, 2)}
                 </pre>
