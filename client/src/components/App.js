@@ -4,10 +4,18 @@ import Praveen from "./Header";
 
 class App extends Component {
   state = {
-    Animals: []
+    Animals: [],
+    Loaded: false
   };
   componentDidMount() {
-    GetAllAnimals().then(Animals => this.setState({ Animals }));
+    setTimeout(() => {
+      GetAllAnimals().then(Animals =>
+        this.setState({
+          Animals,
+          Loaded: true
+        })
+      );
+    }, 1000);
   }
   render() {
     return (
@@ -18,9 +26,15 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <pre className="border rounded bg-light p-1 my-3">
-                {JSON.stringify(this.state, null, 2)}
-              </pre>
+              {this.state.Loaded ? (
+                <pre className="border rounded bg-light p-1 my-3">
+                  {JSON.stringify(this.state, null, 2)}
+                </pre>
+              ) : (
+                <div className="Loading text-center">
+                  <img src="https://i.imgur.com/SUvUcpv.gif" alt="Loading..." />
+                </div>
+              )}
             </div>
           </div>
         </div>
