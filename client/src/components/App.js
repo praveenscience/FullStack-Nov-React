@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { GetAllAnimals } from "../services/Animals";
+import AnimalsList from "./AnimalsList";
 import Praveen from "./Header";
+import Loader from "./Loader";
 
 class App extends Component {
   state = {
@@ -25,15 +27,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              {Loaded ? (
-                <pre className="border rounded bg-light p-1 my-3">
-                  {JSON.stringify(this.state, null, 2)}
-                </pre>
-              ) : (
-                <div className="Loading text-center">
-                  <img src="https://i.imgur.com/SUvUcpv.gif" alt="Loading..." />
-                </div>
-              )}
+              {Loaded ? <AnimalsList List={Animals} /> : <Loader />}
             </div>
           </div>
         </div>
