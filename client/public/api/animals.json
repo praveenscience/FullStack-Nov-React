@@ -1,0 +1,62 @@
+[
+  {
+    "Name": "Cat",
+    "Image": "https://i.imgur.com/9EUlXHh.png"
+  },
+  {
+    "Name": "Dog",
+    "Image": "https://i.imgur.com/9ESvabk.png"
+  },
+  {
+    "Name": "Lion",
+    "Image": "https://i.imgur.com/Kz2ARme.png"
+  },
+  {
+    "Name": "Cow",
+    "Image": "https://i.imgur.com/3OQ7RkJ.png"
+  },
+  {
+    "Name": "Tiger",
+    "Image": "https://i.imgur.com/p7mpyEe.png"
+  },
+  {
+    "Name": "Elephant",
+    "Image": "https://i.imgur.com/NuLcf3S.png"
+  },
+  {
+    "Name": "Zebra",
+    "Image": "https://i.imgur.com/pJvPx5y.png"
+  },
+  {
+    "Name": "Giant Panda",
+    "Image": "https://i.imgur.com/38AVRAz.png"
+  },
+  {
+    "Name": "Wolf",
+    "Image": "https://i.imgur.com/NhXaWX1.png"
+  },
+  {
+    "Name": "Polar Bear",
+    "Image": "https://i.imgur.com/XR2sHqx.png"
+  },
+  {
+    "Name": "Fox",
+    "Image": "https://i.imgur.com/ZUMKXlt.png"
+  },
+  {
+    "Name": "Snow Leopard",
+    "Image": "https://i.imgur.com/yoblnTn.png"
+  },
+  {
+    "Name": "Cheetah",
+    "Image": "https://i.imgur.com/iNL41ov.jpg"
+  },
+  {
+    "Name": "Giraffe",
+    "Image": "https://i.imgur.com/VH5zKPG.png"
+  },
+  {
+    "Name": "Mongoose",
+    "Image": "https://i.imgur.com/K0lU1vh.jpg"
+  }
+]
