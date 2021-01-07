@@ -7,6 +7,9 @@
     }
     .btn-sm {
       float: right;
+      &:focus {
+        box-shadow: none;
+      }
     }
   }
 }
