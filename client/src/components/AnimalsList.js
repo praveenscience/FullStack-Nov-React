@@ -38,6 +38,7 @@ const AnimalsList = ({ List }) => {
                   Image={animal.Image}
                   Name={animal.Name}
                   LikeHandler={LikeHandler}
+                  Liked={Liked.includes(animal.Name)}
                 />
               ))
           : "Nothing Found"}
