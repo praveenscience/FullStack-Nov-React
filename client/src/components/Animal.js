@@ -17,7 +17,9 @@ const Animal = ({ Image, Name, LikeHandler, Liked, SeeHandler }) => {
           ike
         </button>
         {Liked && (
-          <button className="btn btn-sm btn-outline-primary mr-1">See</button>
+          <button className="btn btn-sm btn-outline-primary mr-1">
+            <i className="icon-eye"></i>
+          </button>
         )}
       </Card>
     </div>
