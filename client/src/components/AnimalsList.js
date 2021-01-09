@@ -41,6 +41,13 @@ const AnimalsList = ({ List }) => {
       )}
       <Search Query={Query} setQuery={setQuery} />
       <div className="row my-3">
+        <div className="col-12">
+          <h3>
+            Animals{" "}
+            {Liked.length > 0 &&
+              `(${Liked.length} liked animal${Liked.length !== 1 ? "s" : ""})`}
+          </h3>
+        </div>
         {[...List].length > 0
           ? [...List]
               .filter(AnimalsFilter)
