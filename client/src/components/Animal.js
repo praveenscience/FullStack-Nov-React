@@ -16,6 +16,9 @@ const Animal = ({ Image, Name, LikeHandler, Liked, SeeHandler }) => {
           {Liked ? "Unl" : "L"}
           ike
         </button>
+        {Liked && (
+          <button className="btn btn-sm btn-outline-primary mr-1">See</button>
+        )}
       </Card>
     </div>
   );
