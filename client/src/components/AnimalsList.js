@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, NavLink } from "react-router-dom";
 import Search from "./Search";
 import AnimalsLister from "./AnimalsLister";
 
@@ -21,18 +21,25 @@ const AnimalsList = ({ List }) => {
       {Liked.length > 0 && (
         <div className="row">
           <div className="col-12 text-center pt-3">
-            <Link className="btn btn-outline-primary btn-sm mr-2" to="/">
+            <NavLink
+              className="btn btn-outline-primary btn-sm mr-2"
+              to="/"
+              exact={true}
+            >
               Home
-            </Link>
-            <Link className="btn btn-outline-primary btn-sm mr-2" to="/liked">
+            </NavLink>
+            <NavLink
+              className="btn btn-outline-primary btn-sm mr-2"
+              to="/liked"
+            >
               Liked Animals
-            </Link>
-            <Link className="btn btn-outline-primary btn-sm mr-2" to="/see">
+            </NavLink>
+            <NavLink className="btn btn-outline-primary btn-sm mr-2" to="/see">
               Want to See
-            </Link>
-            <Link className="btn btn-outline-primary btn-sm" to="/unsee">
+            </NavLink>
+            <NavLink className="btn btn-outline-primary btn-sm" to="/unsee">
               Don't Want to See
-            </Link>
+            </NavLink>
           </div>
         </div>
       )}
