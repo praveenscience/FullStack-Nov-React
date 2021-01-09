@@ -39,20 +39,6 @@ const AnimalsList = ({ List }) => {
       <Search Query={Query} setQuery={setQuery} />
       <div className="row my-3">
         <div className="col-12">
-          <Switch>
-            <Route path="/" exact={true}>
-              <p>Home</p>
-            </Route>
-            <Route path="/liked">
-              <p>Liked Animals</p>
-            </Route>
-            <Route path="/see">
-              <p>Want to See</p>
-            </Route>
-            <Route path="/unsee">
-              <p>Don't Want to See</p>
-            </Route>
-          </Switch>
           <h3>
             Animals
             <span className="badge badge-pill badge-success ml-2">
@@ -63,12 +49,40 @@ const AnimalsList = ({ List }) => {
             </span>
           </h3>
         </div>
-        <AnimalsLister
-          Query={Query}
-          List={List}
-          LikeHandler={LikeHandler}
-          Liked={Liked}
-        />
+        <Switch>
+          <Route path="/" exact={true}>
+            <div className="col-12">
+              <p>Showing all the animals.</p>
+            </div>
+            <AnimalsLister
+              Query={Query}
+              List={List}
+              LikeHandler={LikeHandler}
+              Liked={Liked}
+            />
+          </Route>
+          <Route path="/liked">
+            <div className="col-12">
+              <p>Showing the list of animals that you liked.</p>
+            </div>
+            <AnimalsLister
+              Query={Query}
+              List={List.filter(animal => Liked.includes(animal.Name))}
+              LikeHandler={LikeHandler}
+              Liked={Liked}
+            />
+          </Route>
+          <Route path="/see">
+            <div className="col-12">
+              <p>Showing the list of animals that you want to see.</p>
+            </div>
+          </Route>
+          <Route path="/unsee">
+            <div className="col-12">
+              <p>Showing the list of animals that you don't want to see.</p>
+            </div>
+          </Route>
+        </Switch>
       </div>
     </div>
   );
