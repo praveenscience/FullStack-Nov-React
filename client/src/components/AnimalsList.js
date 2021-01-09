@@ -43,9 +43,13 @@ const AnimalsList = ({ List }) => {
       <div className="row my-3">
         <div className="col-12">
           <h3>
-            Animals{" "}
-            {Liked.length > 0 &&
-              `(${Liked.length} liked animal${Liked.length !== 1 ? "s" : ""})`}
+            Animals
+            <span className="badge badge-pill badge-success ml-2">
+              {Liked.length > 0 &&
+                `(${Liked.length} liked animal${
+                  Liked.length !== 1 ? "s" : ""
+                })`}
+            </span>
           </h3>
         </div>
         {[...List].length > 0
