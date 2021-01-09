@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Switch, Route, Link } from "react-router-dom";
 import Search from "./Search";
 import AnimalsLister from "./AnimalsLister";
 
@@ -20,24 +21,38 @@ const AnimalsList = ({ List }) => {
       {Liked.length > 0 && (
         <div className="row">
           <div className="col-12 text-center pt-3">
-            <button className="btn btn-outline-primary btn-sm mr-2">
+            <Link className="btn btn-outline-primary btn-sm mr-2" to="/">
               Home
-            </button>
-            <button className="btn btn-outline-primary btn-sm mr-2">
+            </Link>
+            <Link className="btn btn-outline-primary btn-sm mr-2" to="/liked">
               Liked Animals
-            </button>
-            <button className="btn btn-outline-primary btn-sm mr-2">
+            </Link>
+            <Link className="btn btn-outline-primary btn-sm mr-2" to="/see">
               Want to See
-            </button>
-            <button className="btn btn-outline-primary btn-sm">
+            </Link>
+            <Link className="btn btn-outline-primary btn-sm" to="/unsee">
               Don't Want to See
-            </button>
+            </Link>
           </div>
         </div>
       )}
       <Search Query={Query} setQuery={setQuery} />
       <div className="row my-3">
         <div className="col-12">
+          <Switch>
+            <Route path="/" exact={true}>
+              <p>Home</p>
+            </Route>
+            <Route path="/liked">
+              <p>Liked Animals</p>
+            </Route>
+            <Route path="/see">
+              <p>Want to See</p>
+            </Route>
+            <Route path="/unsee">
+              <p>Don't Want to See</p>
+            </Route>
+          </Switch>
           <h3>
             Animals
             <span className="badge badge-pill badge-success ml-2">
