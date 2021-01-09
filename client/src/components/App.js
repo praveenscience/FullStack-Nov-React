@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { GetAllAnimals } from "../services/Animals";
 import AnimalsList from "./AnimalsList";
-import Praveen from "./Header";
+import Header from "./Header";
 import Loader from "./Loader";
 
 class App extends Component {
@@ -21,9 +21,9 @@ class App extends Component {
     const { Animals, Loaded } = this.state;
     return (
       <div className="App">
-        <Praveen dark={true} className="Header">
+        <Header dark={true} className="Header">
           Hello World Life
-        </Praveen>
+        </Header>
         <div className="container">
           <div className="row">
             <div className="col-12">
