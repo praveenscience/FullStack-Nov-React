@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 
-const Animal = ({ Image, Name, LikeHandler, Liked }) => {
+const Animal = ({ Image, Name, LikeHandler, Liked, SeeHandler }) => {
   const handleLike = e => {
     e.preventDefault();
     LikeHandler(Name);

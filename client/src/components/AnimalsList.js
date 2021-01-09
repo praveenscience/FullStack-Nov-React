@@ -6,6 +6,7 @@ import AnimalsLister from "./AnimalsLister";
 const AnimalsList = ({ List }) => {
   const [Query, setQuery] = useState("");
   const [Liked, setLiked] = useState([]);
+  const [See, setSee] = useState([]);
   const LikeHandler = animal => {
     const newLikes = [...Liked];
     const index = Liked.indexOf(animal);
@@ -15,6 +16,16 @@ const AnimalsList = ({ List }) => {
       newLikes.push(animal);
     }
     setLiked(newLikes);
+  };
+  const SeeHandler = animal => {
+    const newSee = [...See];
+    const index = See.indexOf(animal);
+    if (index > -1) {
+      newSee.splice(index, 1);
+    } else {
+      newSee.push(animal);
+    }
+    setSee(newSee);
   };
   return (
     <div className="Animals">
@@ -66,6 +77,9 @@ const AnimalsList = ({ List }) => {
               List={List}
               LikeHandler={LikeHandler}
               Liked={Liked}
+              See={See}
+              setSee={setSee}
+              SeeHandler={SeeHandler}
             />
           </Route>
           <Route path="/liked">
@@ -77,6 +91,9 @@ const AnimalsList = ({ List }) => {
               List={List.filter(animal => Liked.includes(animal.Name))}
               LikeHandler={LikeHandler}
               Liked={Liked}
+              See={See}
+              setSee={setSee}
+              SeeHandler={SeeHandler}
             />
           </Route>
           <Route path="/see">
