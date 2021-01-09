@@ -7,7 +7,7 @@ const Animal = ({ Image, Name, LikeHandler, Liked }) => {
     LikeHandler(Name);
   };
   return (
-    <div className="Animal py-3 col-4">
+    <div className="Animals-Item py-3 col-4">
       <Card Image={Image} ImgAlign="top" Title={Name}>
         <button
           className={"btn btn-sm btn" + (Liked ? "" : "-outline") + "-primary"}
