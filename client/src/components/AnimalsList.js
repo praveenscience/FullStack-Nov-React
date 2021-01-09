@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Animal from "./Animal";
 import Search from "./Search";
+import AnimalsLister from "./AnimalsLister";
 
 const AnimalsList = ({ List }) => {
   const [Query, setQuery] = useState("");
@@ -15,10 +15,6 @@ const AnimalsList = ({ List }) => {
     }
     setLiked(newLikes);
   };
-  const AnimalsFilter = animal =>
-    Query.length === 0
-      ? true
-      : animal.Name.toLowerCase().indexOf(Query.toLowerCase()) > -1;
   return (
     <div className="Animals">
       {Liked.length > 0 && (
@@ -52,19 +48,12 @@ const AnimalsList = ({ List }) => {
             </span>
           </h3>
         </div>
-        {[...List].length > 0
-          ? [...List]
-              .filter(AnimalsFilter)
-              .map(animal => (
-                <Animal
-                  key={animal.Name}
-                  Image={animal.Image}
-                  Name={animal.Name}
-                  LikeHandler={LikeHandler}
-                  Liked={Liked.includes(animal.Name)}
-                />
-              ))
-          : "Nothing Found"}
+        <AnimalsLister
+          Query={Query}
+          List={List}
+          LikeHandler={LikeHandler}
+          Liked={Liked}
+        />
       </div>
     </div>
   );
