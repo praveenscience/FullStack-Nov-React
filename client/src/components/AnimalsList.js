@@ -11,6 +11,9 @@ const AnimalsList = ({ List }) => {
     const newLikes = [...Liked];
     const index = Liked.indexOf(animal);
     if (index > -1) {
+      if (See.includes(animal)) {
+        SeeHandler(animal);
+      }
       newLikes.splice(index, 1);
     } else {
       newLikes.push(animal);
