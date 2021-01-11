@@ -3,6 +3,7 @@ import { Switch, Route, NavLink } from "react-router-dom";
 import { LoadFromLS, SetToLS } from "../helpers/Storage";
 import Search from "./Search";
 import AnimalsLister from "./AnimalsLister";
+import CategoriesPage from "./CategoriesPage";
 
 const AnimalsList = ({ List }) => {
   const [Query, setQuery] = useState("");
@@ -106,6 +107,23 @@ const AnimalsList = ({ List }) => {
               SeeHandler={SeeHandler}
             />
           </Route>
+          <Route
+            path="/categories"
+            render={rp => (
+              <CategoriesPage
+                {...{
+                  Categories,
+                  Query,
+                  List,
+                  LikeHandler,
+                  Liked,
+                  See,
+                  SeeHandler
+                }}
+                {...rp}
+              />
+            )}
+          />
           <Route path="/liked">
             <div className="col-12">
               <p>Showing the list of animals that you liked.</p>

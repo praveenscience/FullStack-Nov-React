@@ -3,6 +3,7 @@ import AnimalsLister from "./AnimalsLister";
 import Card from "./Card";
 
 const CategoriesPage = ({
+  Categories,
   Query,
   List,
   LikeHandler,
