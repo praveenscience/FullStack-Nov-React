@@ -23,7 +23,7 @@ const CategoriesPage = ({
           <div className="row">
             <AnimalsLister
               Query={Query}
-              List={List}
+              List={List.filter(animal => !Categorised.includes(animal.Name))}
               LikeHandler={LikeHandler}
               Liked={Liked}
               See={See}
