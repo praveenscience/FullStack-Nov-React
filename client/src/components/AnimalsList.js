@@ -29,31 +29,36 @@ const AnimalsList = ({ List }) => {
   };
   return (
     <div className="Animals">
-      {Liked.length > 0 && (
-        <div className="row">
-          <div className="col-12 text-center pt-3">
-            <NavLink
-              className="btn btn-outline-primary btn-sm mr-2"
-              to="/"
-              exact={true}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              className="btn btn-outline-primary btn-sm mr-2"
-              to="/liked"
-            >
-              Liked Animals
-            </NavLink>
-            <NavLink className="btn btn-outline-primary btn-sm mr-2" to="/see">
-              Want to See
-            </NavLink>
-            <NavLink className="btn btn-outline-primary btn-sm" to="/unsee">
-              Don't Want to See
-            </NavLink>
-          </div>
+      <div className="row">
+        <div className="col-12 text-center pt-3">
+          <NavLink
+            className="btn btn-outline-primary btn-sm mr-2"
+            to="/"
+            exact={true}
+          >
+            Home
+          </NavLink>
+          {Liked.length > 0 && (
+            <>
+              <NavLink
+                className="btn btn-outline-primary btn-sm mr-2"
+                to="/liked"
+              >
+                Liked Animals
+              </NavLink>
+              <NavLink
+                className="btn btn-outline-primary btn-sm mr-2"
+                to="/see"
+              >
+                Want to See
+              </NavLink>
+              <NavLink className="btn btn-outline-primary btn-sm" to="/unsee">
+                Don't Want to See
+              </NavLink>
+            </>
+          )}
         </div>
-      )}
+      </div>
       <Search Query={Query} setQuery={setQuery} />
       <div className="row my-3">
         <div className="col-12">
