@@ -4,9 +4,18 @@ import Search from "./Search";
 import AnimalsLister from "./AnimalsLister";
 
 const AnimalsList = ({ List }) => {
+  const hasStorage = typeof window.Storage !== "undefined";
   const [Query, setQuery] = useState("");
-  const [Liked, setLiked] = useState([]);
-  const [See, setSee] = useState([]);
+  const [Liked, setLiked] = useState(
+    hasStorage && window.localStorage.getItem("Liked") !== null
+      ? window.localStorage.getItem("Liked")
+      : []
+  );
+  const [See, setSee] = useState(
+    hasStorage && window.localStorage.getItem("See") !== null
+      ? window.localStorage.getItem("See")
+      : []
+  );
   const LikeHandler = animal => {
     const newLikes = [...Liked];
     const index = Liked.indexOf(animal);
@@ -19,7 +28,7 @@ const AnimalsList = ({ List }) => {
       newLikes.push(animal);
     }
     setLiked(newLikes);
-    if (typeof window.Storage !== "undefined") {
+    if (hasStorage) {
       window.localStorage.setItem("Liked", newLikes);
     }
   };
@@ -32,7 +41,7 @@ const AnimalsList = ({ List }) => {
       newSee.push(animal);
     }
     setSee(newSee);
-    if (typeof window.Storage !== "undefined") {
+    if (hasStorage) {
       window.localStorage.setItem("See", newSee);
     }
   };
