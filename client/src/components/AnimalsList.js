@@ -19,6 +19,9 @@ const AnimalsList = ({ List }) => {
       newLikes.push(animal);
     }
     setLiked(newLikes);
+    if (typeof window.Storage !== "undefined") {
+      window.localStorage.setItem("Liked", newLikes);
+    }
   };
   const SeeHandler = animal => {
     const newSee = [...See];
@@ -29,6 +32,9 @@ const AnimalsList = ({ List }) => {
       newSee.push(animal);
     }
     setSee(newSee);
+    if (typeof window.Storage !== "undefined") {
+      window.localStorage.setItem("See", newSee);
+    }
   };
   return (
     <div className="Animals">
