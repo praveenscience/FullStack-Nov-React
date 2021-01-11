@@ -11,6 +11,11 @@ const CategoriesPage = ({
   See,
   SeeHandler
 }) => {
+  const Categorised = [
+    ...Categories.Herbivorous,
+    ...Categories.Carnivorous,
+    ...Categories.Omnivorous
+  ];
   return (
     <div className="col-12">
       <div className="CategoriesPage">
