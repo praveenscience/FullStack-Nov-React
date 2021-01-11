@@ -32,13 +32,46 @@ const CategoriesPage = ({
           </div>
         </Card>
         <Card Header="Herbivorous" className="my-3">
-          Hi
+          <div className="row">
+            <AnimalsLister
+              Query={Query}
+              List={List.filter(animal =>
+                Categories.Herbivorous.includes(animal.Name)
+              )}
+              LikeHandler={LikeHandler}
+              Liked={Liked}
+              See={See}
+              SeeHandler={SeeHandler}
+            />
+          </div>
         </Card>
         <Card Header="Carnivorous" className="my-3">
-          Hi
+          <div className="row">
+            <AnimalsLister
+              Query={Query}
+              List={List.filter(animal =>
+                Categories.Carnivorous.includes(animal.Name)
+              )}
+              LikeHandler={LikeHandler}
+              Liked={Liked}
+              See={See}
+              SeeHandler={SeeHandler}
+            />
+          </div>
         </Card>
         <Card Header="Omnivorous" className="my-3">
-          Hi
+          <div className="row">
+            <AnimalsLister
+              Query={Query}
+              List={List.filter(animal =>
+                Categories.Omnivorous.includes(animal.Name)
+              )}
+              LikeHandler={LikeHandler}
+              Liked={Liked}
+              See={See}
+              SeeHandler={SeeHandler}
+            />
+          </div>
         </Card>
       </div>
     </div>
