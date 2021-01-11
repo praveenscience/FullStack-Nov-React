@@ -8,12 +8,12 @@ const AnimalsList = ({ List }) => {
   const [Query, setQuery] = useState("");
   const [Liked, setLiked] = useState(
     hasStorage && window.localStorage.getItem("Liked") !== null
-      ? window.localStorage.getItem("Liked")
+      ? JSON.parse(window.localStorage.getItem("Liked"))
       : []
   );
   const [See, setSee] = useState(
     hasStorage && window.localStorage.getItem("See") !== null
-      ? window.localStorage.getItem("See")
+      ? JSON.parse(window.localStorage.getItem("See"))
       : []
   );
   const LikeHandler = animal => {
@@ -29,7 +29,7 @@ const AnimalsList = ({ List }) => {
     }
     setLiked(newLikes);
     if (hasStorage) {
-      window.localStorage.setItem("Liked", newLikes);
+      window.localStorage.setItem("Liked", JSON.stringify(newLikes));
     }
   };
   const SeeHandler = animal => {
@@ -42,7 +42,7 @@ const AnimalsList = ({ List }) => {
     }
     setSee(newSee);
     if (hasStorage) {
-      window.localStorage.setItem("See", newSee);
+      window.localStorage.setItem("See", JSON.stringify(newSee));
     }
   };
   return (
