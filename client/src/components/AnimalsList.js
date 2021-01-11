@@ -105,11 +105,33 @@ const AnimalsList = ({ List }) => {
             <div className="col-12">
               <p>Showing the list of animals that you want to see.</p>
             </div>
+            <AnimalsLister
+              Query={Query}
+              List={List.filter(animal =>
+                Liked.includes(animal.Name)
+              ).filter(animal => See.includes(animal.Name))}
+              LikeHandler={LikeHandler}
+              Liked={Liked}
+              See={See}
+              setSee={setSee}
+              SeeHandler={SeeHandler}
+            />
           </Route>
           <Route path="/unsee">
             <div className="col-12">
               <p>Showing the list of animals that you don't want to see.</p>
             </div>
+            <AnimalsLister
+              Query={Query}
+              List={List.filter(animal => Liked.includes(animal.Name)).filter(
+                animal => !See.includes(animal.Name)
+              )}
+              LikeHandler={LikeHandler}
+              Liked={Liked}
+              See={See}
+              setSee={setSee}
+              SeeHandler={SeeHandler}
+            />
           </Route>
         </Switch>
       </div>
