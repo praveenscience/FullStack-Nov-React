@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
+import { LoadFromLS, SetToLS } from "../helpers/Storage";
 import Search from "./Search";
 import AnimalsLister from "./AnimalsLister";
 
 const AnimalsList = ({ List }) => {
-  const hasStorage = typeof window.Storage !== "undefined";
   const [Query, setQuery] = useState("");
-  const [Liked, setLiked] = useState(
-    hasStorage && window.localStorage.getItem("Liked") !== null
-      ? JSON.parse(window.localStorage.getItem("Liked"))
-      : []
-  );
-  const [See, setSee] = useState(
-    hasStorage && window.localStorage.getItem("See") !== null
-      ? JSON.parse(window.localStorage.getItem("See"))
-      : []
-  );
+  const [Liked, setLiked] = useState(LoadFromLS("Liked", []));
+  const [See, setSee] = useState(LoadFromLS("See", []));
   const LikeHandler = animal => {
     const newLikes = [...Liked];
     const index = Liked.indexOf(animal);
@@ -28,9 +20,7 @@ const AnimalsList = ({ List }) => {
       newLikes.push(animal);
     }
     setLiked(newLikes);
-    if (hasStorage) {
-      window.localStorage.setItem("Liked", JSON.stringify(newLikes));
-    }
+    SetToLS("Liked", newLikes);
   };
   const SeeHandler = animal => {
     const newSee = [...See];
@@ -41,9 +31,7 @@ const AnimalsList = ({ List }) => {
       newSee.push(animal);
     }
     setSee(newSee);
-    if (hasStorage) {
-      window.localStorage.setItem("See", JSON.stringify(newSee));
-    }
+    SetToLS("See", newSee);
   };
   return (
     <div className="Animals">
