@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Animal from "./Animal";
 
-const AnimalsLister = ({ List, Query, LikeHandler, Liked, SeeHandler }) => {
+const AnimalsLister = ({
+  List,
+  Query,
+  LikeHandler,
+  Liked,
+  See,
+  SeeHandler
+}) => {
   const AnimalsFilter = animal =>
     Query.length === 0
       ? true
@@ -18,6 +25,7 @@ const AnimalsLister = ({ List, Query, LikeHandler, Liked, SeeHandler }) => {
           LikeHandler={LikeHandler}
           Liked={Liked.includes(animal.Name)}
           SeeHandler={SeeHandler}
+          Saw={See.includes(animal.Name)}
         />
       ))
   ) : (

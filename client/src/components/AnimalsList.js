@@ -83,7 +83,6 @@ const AnimalsList = ({ List }) => {
               LikeHandler={LikeHandler}
               Liked={Liked}
               See={See}
-              setSee={setSee}
               SeeHandler={SeeHandler}
             />
           </Route>
@@ -97,7 +96,6 @@ const AnimalsList = ({ List }) => {
               LikeHandler={LikeHandler}
               Liked={Liked}
               See={See}
-              setSee={setSee}
               SeeHandler={SeeHandler}
             />
           </Route>
