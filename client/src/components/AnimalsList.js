@@ -8,6 +8,13 @@ const AnimalsList = ({ List }) => {
   const [Query, setQuery] = useState("");
   const [Liked, setLiked] = useState(LoadFromLS("Liked", []));
   const [See, setSee] = useState(LoadFromLS("See", []));
+  const [Categories, setCategories] = useState(
+    LoadFromLS("Categories", {
+      Herbivorous: [],
+      Carnivorous: [],
+      Omnivorous: []
+    })
+  );
   const LikeHandler = animal => {
     const newLikes = [...Liked];
     const index = Liked.indexOf(animal);
