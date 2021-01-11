@@ -51,6 +51,13 @@ const AnimalsList = ({ List }) => {
           >
             Home
           </NavLink>
+          <NavLink
+            className="btn btn-outline-primary btn-sm mr-2"
+            to="/categories"
+            exact={true}
+          >
+            Categories
+          </NavLink>
           {Liked.length > 0 && (
             <>
               <NavLink
