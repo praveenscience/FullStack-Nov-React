@@ -9,7 +9,8 @@ const CategoriesPage = ({
   LikeHandler,
   Liked,
   See,
-  SeeHandler
+  SeeHandler,
+  ToggleAnimalCat
 }) => {
   const Categorised = [
     ...Categories.Herbivorous,
@@ -28,6 +29,7 @@ const CategoriesPage = ({
               Liked={Liked}
               See={See}
               SeeHandler={SeeHandler}
+              ToggleAnimalCat={ToggleAnimalCat}
             />
           </div>
         </Card>
@@ -42,6 +44,7 @@ const CategoriesPage = ({
               Liked={Liked}
               See={See}
               SeeHandler={SeeHandler}
+              ToggleAnimalCat={ToggleAnimalCat}
             />
           </div>
         </Card>
@@ -56,6 +59,7 @@ const CategoriesPage = ({
               Liked={Liked}
               See={See}
               SeeHandler={SeeHandler}
+              ToggleAnimalCat={ToggleAnimalCat}
             />
           </div>
         </Card>
@@ -70,6 +74,7 @@ const CategoriesPage = ({
               Liked={Liked}
               See={See}
               SeeHandler={SeeHandler}
+              ToggleAnimalCat={ToggleAnimalCat}
             />
           </div>
         </Card>

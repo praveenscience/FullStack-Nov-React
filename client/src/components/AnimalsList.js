@@ -133,7 +133,8 @@ const AnimalsList = ({ List }) => {
                   LikeHandler,
                   Liked,
                   See,
-                  SeeHandler
+                  SeeHandler,
+                  ToggleAnimalCat
                 }}
                 {...rp}
               />
