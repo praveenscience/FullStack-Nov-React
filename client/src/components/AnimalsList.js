@@ -66,10 +66,12 @@ const AnimalsList = ({ List }) => {
       Omnivorous: [...Categories.Omnivorous]
     };
     const List = newCats[category];
-    const index = List.indexOf(animal);
-    if (index > -1) {
-      List.splice(index, 1);
-    } else {
+    const curCat = findAnimalCat(animal);
+    const curList = newCats[curCat];
+    if (curCat !== "") {
+      curList.splice(curList.indexOf(animal), 1);
+    }
+    if (category !== "") {
       List.push(animal);
     }
     setCategories(newCats);
