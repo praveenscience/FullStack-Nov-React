@@ -9,8 +9,22 @@ const AnimalsLister = ({
   Liked,
   See,
   SeeHandler,
-  ToggleAnimalCat
+  ToggleAnimalCat,
+  Categories,
+  Categorised
 }) => {
+  const findAnimalCat = animal => {
+    if (Categorised.includes(animal)) {
+      if (Categories.Herbivorous.includes(animal)) {
+        return "Herbivorous";
+      } else if (Categories.Carnivorous.includes(animal)) {
+        return "Carnivorous";
+      } else if (Categories.Omnivorous.includes(animal)) {
+        return "Omnivorous";
+      }
+    }
+    return "";
+  };
   const AnimalsFilter = animal =>
     Query.length === 0
       ? true
@@ -28,6 +42,7 @@ const AnimalsLister = ({
           SeeHandler={SeeHandler}
           Saw={See.includes(animal.Name)}
           ToggleAnimalCat={ToggleAnimalCat}
+          Category={ToggleAnimalCat ? findAnimalCat(animal.Name) : null}
         />
       ))
   ) : (

@@ -8,7 +8,8 @@ const Animal = ({
   Liked,
   Saw,
   SeeHandler,
-  ToggleAnimalCat
+  ToggleAnimalCat,
+  Category
 }) => {
   const handleLike = e => {
     e.preventDefault();
@@ -40,7 +41,7 @@ const Animal = ({
         )}
         {ToggleAnimalCat && (
           <div className="categorise pt-2">
-            <select className="form-control">
+            <select className="form-control" value={Category}>
               <option value="">Uncategorised</option>
               <option value="Herbivorous">Herbivorous</option>
               <option value="Carnivorous">Carnivorous</option>

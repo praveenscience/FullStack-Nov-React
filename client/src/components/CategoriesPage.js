@@ -30,6 +30,8 @@ const CategoriesPage = ({
               See={See}
               SeeHandler={SeeHandler}
               ToggleAnimalCat={ToggleAnimalCat}
+              Categories={Categories}
+              Categorised={Categorised}
             />
           </div>
         </Card>
