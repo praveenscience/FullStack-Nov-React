@@ -14,6 +14,7 @@ const CategoriesPage = ({
   Categorised,
   findAnimalCat
 }) => {
+  const ToggleExpCol = cat => {};
   return (
     <div className="col-12">
       <div className="CategoriesPage">
@@ -21,7 +22,13 @@ const CategoriesPage = ({
           Header={
             <>
               Uncategorised
-              <button className="btn btn-sm btn-primary float-right">
+              <button
+                className="btn btn-sm btn-primary float-right"
+                onClick={e => {
+                  e.preventDefault();
+                  ToggleExpCol("Uncategorised");
+                }}
+              >
                 <i className="icon-arrow-down"></i>
               </button>
             </>
@@ -47,7 +54,13 @@ const CategoriesPage = ({
           Header={
             <>
               Herbivorous
-              <button className="btn btn-sm btn-primary float-right">
+              <button
+                className="btn btn-sm btn-primary float-right"
+                onClick={e => {
+                  e.preventDefault();
+                  ToggleExpCol("Herbivorous");
+                }}
+              >
                 <i className="icon-arrow-down"></i>
               </button>
             </>
@@ -75,7 +88,13 @@ const CategoriesPage = ({
           Header={
             <>
               Carnivorous
-              <button className="btn btn-sm btn-primary float-right">
+              <button
+                className="btn btn-sm btn-primary float-right"
+                onClick={e => {
+                  e.preventDefault();
+                  ToggleExpCol("Carnivorous");
+                }}
+              >
                 <i className="icon-arrow-down"></i>
               </button>
             </>
@@ -103,7 +122,13 @@ const CategoriesPage = ({
           Header={
             <>
               Omnivorous
-              <button className="btn btn-sm btn-primary float-right">
+              <button
+                className="btn btn-sm btn-primary float-right"
+                onClick={e => {
+                  e.preventDefault();
+                  ToggleExpCol("Omnivorous");
+                }}
+              >
                 <i className="icon-arrow-down"></i>
               </button>
             </>
