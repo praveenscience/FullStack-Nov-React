@@ -10,13 +10,10 @@ const CategoriesPage = ({
   Liked,
   See,
   SeeHandler,
-  ToggleAnimalCat
+  ToggleAnimalCat,
+  Categorised,
+  findAnimalCat
 }) => {
-  const Categorised = [
-    ...Categories.Herbivorous,
-    ...Categories.Carnivorous,
-    ...Categories.Omnivorous
-  ];
   return (
     <div className="col-12">
       <div className="CategoriesPage">
@@ -32,6 +29,7 @@ const CategoriesPage = ({
               ToggleAnimalCat={ToggleAnimalCat}
               Categories={Categories}
               Categorised={Categorised}
+              findAnimalCat={findAnimalCat}
             />
           </div>
         </Card>
@@ -49,6 +47,7 @@ const CategoriesPage = ({
               ToggleAnimalCat={ToggleAnimalCat}
               Categories={Categories}
               Categorised={Categorised}
+              findAnimalCat={findAnimalCat}
             />
           </div>
         </Card>
@@ -66,6 +65,7 @@ const CategoriesPage = ({
               ToggleAnimalCat={ToggleAnimalCat}
               Categories={Categories}
               Categorised={Categorised}
+              findAnimalCat={findAnimalCat}
             />
           </div>
         </Card>
@@ -81,8 +81,9 @@ const CategoriesPage = ({
               See={See}
               SeeHandler={SeeHandler}
               ToggleAnimalCat={ToggleAnimalCat}
+              Categories={Categories}
               Categorised={Categorised}
-              Categorised={Categorised}
+              findAnimalCat={findAnimalCat}
             />
           </div>
         </Card>

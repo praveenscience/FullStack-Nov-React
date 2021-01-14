@@ -41,6 +41,24 @@ const AnimalsList = ({ List }) => {
     setSee(newSee);
     SetToLS("See", newSee);
   };
+  const Categorised = [
+    ...Categories.Herbivorous,
+    ...Categories.Carnivorous,
+    ...Categories.Omnivorous
+  ];
+  const findAnimalCat = animal => {
+    console.log(Categorised);
+    if (Categorised && Categorised.includes(animal)) {
+      if (Categories.Herbivorous.includes(animal)) {
+        return "Herbivorous";
+      } else if (Categories.Carnivorous.includes(animal)) {
+        return "Carnivorous";
+      } else if (Categories.Omnivorous.includes(animal)) {
+        return "Omnivorous";
+      }
+    }
+    return "";
+  };
   const ToggleAnimalCat = (category, animal) => {
     const newCats = {
       Herbivorous: [...Categories.Herbivorous],
@@ -134,7 +152,9 @@ const AnimalsList = ({ List }) => {
                   Liked,
                   See,
                   SeeHandler,
-                  ToggleAnimalCat
+                  ToggleAnimalCat,
+                  Categorised,
+                  findAnimalCat
                 }}
                 {...rp}
               />
