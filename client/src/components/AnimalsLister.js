@@ -8,7 +8,8 @@ const AnimalsLister = ({
   LikeHandler,
   Liked,
   See,
-  SeeHandler
+  SeeHandler,
+  ToggleAnimalCat
 }) => {
   const AnimalsFilter = animal =>
     Query.length === 0
@@ -26,6 +27,7 @@ const AnimalsLister = ({
           Liked={Liked.includes(animal.Name)}
           SeeHandler={SeeHandler}
           Saw={See.includes(animal.Name)}
+          ToggleAnimalCat={ToggleAnimalCat}
         />
       ))
   ) : (
