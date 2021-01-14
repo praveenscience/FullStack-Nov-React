@@ -41,6 +41,21 @@ const AnimalsList = ({ List }) => {
     setSee(newSee);
     SetToLS("See", newSee);
   };
+  const ToggleAnimalCat = (category, animal) => {
+    const newCats = {
+      Herbivorous: [...Categories.Herbivorou],
+      Carnivorous: [...Categories.Carnivorous],
+      Omnivorous: [...Categories.Omnivorous]
+    };
+    const List = newCats[category];
+    const index = List.indexOf(animal);
+    if (index > -1) {
+      List.splice(index, 1);
+    } else {
+      List.push(animal);
+    }
+    setCategories(newCats);
+  };
   return (
     <div className="Animals">
       <div className="row">
