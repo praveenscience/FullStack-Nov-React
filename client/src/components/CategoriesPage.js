@@ -37,7 +37,11 @@ const CategoriesPage = ({
                   ToggleExpCol("Uncategorised");
                 }}
               >
-                <i className="icon-arrow-down"></i>
+                <i
+                  className={
+                    "icon-arrow-" + (Expanded.Uncategorised ? "down" : "up")
+                  }
+                ></i>
               </button>
             </>
           }
@@ -69,7 +73,11 @@ const CategoriesPage = ({
                   ToggleExpCol("Herbivorous");
                 }}
               >
-                <i className="icon-arrow-down"></i>
+                <i
+                  className={
+                    "icon-arrow-" + (Expanded.Herbivorous ? "down" : "up")
+                  }
+                ></i>
               </button>
             </>
           }
@@ -103,7 +111,11 @@ const CategoriesPage = ({
                   ToggleExpCol("Carnivorous");
                 }}
               >
-                <i className="icon-arrow-down"></i>
+                <i
+                  className={
+                    "icon-arrow-" + (Expanded.Carnivorous ? "down" : "up")
+                  }
+                ></i>
               </button>
             </>
           }
@@ -137,7 +149,11 @@ const CategoriesPage = ({
                   ToggleExpCol("Omnivorous");
                 }}
               >
-                <i className="icon-arrow-down"></i>
+                <i
+                  className={
+                    "icon-arrow-" + (Expanded.Omnivorous ? "down" : "up")
+                  }
+                ></i>
               </button>
             </>
           }
