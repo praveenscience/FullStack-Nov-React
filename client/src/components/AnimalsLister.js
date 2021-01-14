@@ -16,7 +16,7 @@ const AnimalsLister = ({
     Query.length === 0
       ? true
       : animal.Name.toLowerCase().indexOf(Query.toLowerCase()) > -1;
-  return [...List].length > 0 ? (
+  return [...List].filter(AnimalsFilter).length > 0 ? (
     [...List]
       .filter(AnimalsFilter)
       .map(animal => (
