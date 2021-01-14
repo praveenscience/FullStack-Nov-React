@@ -14,6 +14,7 @@ const CategoriesPage = ({
   Categorised,
   findAnimalCat
 }) => {
+  const [EditMode, setEditMode] = useState(false);
   const [Expanded, setExpanded] = useState({
     Uncategorised: true,
     Herbivorous: true,
@@ -25,6 +26,21 @@ const CategoriesPage = ({
   };
   return (
     <div className="col-12">
+      <button
+        className={
+          "btn btn-sm btn" +
+          (EditMode ? "" : "-outline") +
+          "-primary float-right"
+        }
+        onClick={e => {
+          e.preventDefault();
+          setEditMode(!EditMode);
+        }}
+      >
+        {EditMode && "Close "}
+        Edit
+      </button>
+      <p>Set Edit mode if you want to edit.</p>
       <div className="CategoriesPage">
         <Card
           Header={
