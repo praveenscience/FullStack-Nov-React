@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AnimalsLister from "./AnimalsLister";
 import Card from "./Card";
 
@@ -14,7 +14,15 @@ const CategoriesPage = ({
   Categorised,
   findAnimalCat
 }) => {
-  const ToggleExpCol = cat => {};
+  const [Expanded, setExpanded] = useState({
+    Uncategorised: true,
+    Herbivorous: true,
+    Carnivorous: true,
+    Omnivorous: true
+  });
+  const ToggleExpCol = cat => {
+    setExpanded({ ...Expanded, [cat]: !Expanded[cat] });
+  };
   return (
     <div className="col-12">
       <div className="CategoriesPage">
