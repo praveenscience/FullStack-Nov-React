@@ -17,7 +17,17 @@ const CategoriesPage = ({
   return (
     <div className="col-12">
       <div className="CategoriesPage">
-        <Card Header="Uncategorised" className="my-3">
+        <Card
+          Header={
+            <>
+              Uncategorised
+              <button className="btn btn-sm btn-primary float-right">
+                <i className="icon-arrow-down"></i>
+              </button>
+            </>
+          }
+          className="my-3"
+        >
           <div className="row">
             <AnimalsLister
               Query={Query}
@@ -33,7 +43,17 @@ const CategoriesPage = ({
             />
           </div>
         </Card>
-        <Card Header="Herbivorous" className="my-3">
+        <Card
+          Header={
+            <>
+              Herbivorous
+              <button className="btn btn-sm btn-primary float-right">
+                <i className="icon-arrow-down"></i>
+              </button>
+            </>
+          }
+          className="my-3"
+        >
           <div className="row">
             <AnimalsLister
               Query={Query}
@@ -51,7 +71,17 @@ const CategoriesPage = ({
             />
           </div>
         </Card>
-        <Card Header="Carnivorous" className="my-3">
+        <Card
+          Header={
+            <>
+              Carnivorous
+              <button className="btn btn-sm btn-primary float-right">
+                <i className="icon-arrow-down"></i>
+              </button>
+            </>
+          }
+          className="my-3"
+        >
           <div className="row">
             <AnimalsLister
               Query={Query}
@@ -69,7 +99,17 @@ const CategoriesPage = ({
             />
           </div>
         </Card>
-        <Card Header="Omnivorous" className="my-3">
+        <Card
+          Header={
+            <>
+              Omnivorous
+              <button className="btn btn-sm btn-primary float-right">
+                <i className="icon-arrow-down"></i>
+              </button>
+            </>
+          }
+          className="my-3"
+        >
           <div className="row">
             <AnimalsLister
               Query={Query}
