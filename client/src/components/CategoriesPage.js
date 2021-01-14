@@ -47,20 +47,22 @@ const CategoriesPage = ({
           }
           className="my-3"
         >
-          <div className="row">
-            <AnimalsLister
-              Query={Query}
-              List={List.filter(animal => !Categorised.includes(animal.Name))}
-              LikeHandler={LikeHandler}
-              Liked={Liked}
-              See={See}
-              SeeHandler={SeeHandler}
-              ToggleAnimalCat={ToggleAnimalCat}
-              Categories={Categories}
-              Categorised={Categorised}
-              findAnimalCat={findAnimalCat}
-            />
-          </div>
+          {Expanded.Uncategorised && (
+            <div className="row">
+              <AnimalsLister
+                Query={Query}
+                List={List.filter(animal => !Categorised.includes(animal.Name))}
+                LikeHandler={LikeHandler}
+                Liked={Liked}
+                See={See}
+                SeeHandler={SeeHandler}
+                ToggleAnimalCat={ToggleAnimalCat}
+                Categories={Categories}
+                Categorised={Categorised}
+                findAnimalCat={findAnimalCat}
+              />
+            </div>
+          )}
         </Card>
         <Card
           Header={
@@ -83,22 +85,24 @@ const CategoriesPage = ({
           }
           className="my-3"
         >
-          <div className="row">
-            <AnimalsLister
-              Query={Query}
-              List={List.filter(animal =>
-                Categories.Herbivorous.includes(animal.Name)
-              )}
-              LikeHandler={LikeHandler}
-              Liked={Liked}
-              See={See}
-              SeeHandler={SeeHandler}
-              ToggleAnimalCat={ToggleAnimalCat}
-              Categories={Categories}
-              Categorised={Categorised}
-              findAnimalCat={findAnimalCat}
-            />
-          </div>
+          {Expanded.Herbivorous && (
+            <div className="row">
+              <AnimalsLister
+                Query={Query}
+                List={List.filter(animal =>
+                  Categories.Herbivorous.includes(animal.Name)
+                )}
+                LikeHandler={LikeHandler}
+                Liked={Liked}
+                See={See}
+                SeeHandler={SeeHandler}
+                ToggleAnimalCat={ToggleAnimalCat}
+                Categories={Categories}
+                Categorised={Categorised}
+                findAnimalCat={findAnimalCat}
+              />
+            </div>
+          )}
         </Card>
         <Card
           Header={
@@ -121,22 +125,24 @@ const CategoriesPage = ({
           }
           className="my-3"
         >
-          <div className="row">
-            <AnimalsLister
-              Query={Query}
-              List={List.filter(animal =>
-                Categories.Carnivorous.includes(animal.Name)
-              )}
-              LikeHandler={LikeHandler}
-              Liked={Liked}
-              See={See}
-              SeeHandler={SeeHandler}
-              ToggleAnimalCat={ToggleAnimalCat}
-              Categories={Categories}
-              Categorised={Categorised}
-              findAnimalCat={findAnimalCat}
-            />
-          </div>
+          {Expanded.Carnivorous && (
+            <div className="row">
+              <AnimalsLister
+                Query={Query}
+                List={List.filter(animal =>
+                  Categories.Carnivorous.includes(animal.Name)
+                )}
+                LikeHandler={LikeHandler}
+                Liked={Liked}
+                See={See}
+                SeeHandler={SeeHandler}
+                ToggleAnimalCat={ToggleAnimalCat}
+                Categories={Categories}
+                Categorised={Categorised}
+                findAnimalCat={findAnimalCat}
+              />
+            </div>
+          )}
         </Card>
         <Card
           Header={
@@ -159,22 +165,24 @@ const CategoriesPage = ({
           }
           className="my-3"
         >
-          <div className="row">
-            <AnimalsLister
-              Query={Query}
-              List={List.filter(animal =>
-                Categories.Omnivorous.includes(animal.Name)
-              )}
-              LikeHandler={LikeHandler}
-              Liked={Liked}
-              See={See}
-              SeeHandler={SeeHandler}
-              ToggleAnimalCat={ToggleAnimalCat}
-              Categories={Categories}
-              Categorised={Categorised}
-              findAnimalCat={findAnimalCat}
-            />
-          </div>
+          {Expanded.Omnivorous && (
+            <div className="row">
+              <AnimalsLister
+                Query={Query}
+                List={List.filter(animal =>
+                  Categories.Omnivorous.includes(animal.Name)
+                )}
+                LikeHandler={LikeHandler}
+                Liked={Liked}
+                See={See}
+                SeeHandler={SeeHandler}
+                ToggleAnimalCat={ToggleAnimalCat}
+                Categories={Categories}
+                Categorised={Categorised}
+                findAnimalCat={findAnimalCat}
+              />
+            </div>
+          )}
         </Card>
       </div>
     </div>
