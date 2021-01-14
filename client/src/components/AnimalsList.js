@@ -43,7 +43,7 @@ const AnimalsList = ({ List }) => {
   };
   const ToggleAnimalCat = (category, animal) => {
     const newCats = {
-      Herbivorous: [...Categories.Herbivorou],
+      Herbivorous: [...Categories.Herbivorous],
       Carnivorous: [...Categories.Carnivorous],
       Omnivorous: [...Categories.Omnivorous]
     };

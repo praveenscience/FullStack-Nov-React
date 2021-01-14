@@ -19,6 +19,10 @@ const Animal = ({
     e.preventDefault();
     SeeHandler(Name);
   };
+  const handleChangeCat = e => {
+    console.log(e.target.value, Name);
+    ToggleAnimalCat(e.target.value, Name);
+  };
   return (
     <div className="Animals-Item py-3 col-4">
       <Card Image={Image} ImgAlign="top" Title={Name}>
@@ -41,7 +45,11 @@ const Animal = ({
         )}
         {ToggleAnimalCat && (
           <div className="categorise pt-2">
-            <select className="form-control" value={Category}>
+            <select
+              className="form-control"
+              value={Category}
+              onChange={handleChangeCat}
+            >
               <option value="">Uncategorised</option>
               <option value="Herbivorous">Herbivorous</option>
               <option value="Carnivorous">Carnivorous</option>

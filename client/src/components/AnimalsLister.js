@@ -14,7 +14,8 @@ const AnimalsLister = ({
   Categorised
 }) => {
   const findAnimalCat = animal => {
-    if (Categorised.includes(animal)) {
+    console.log(Categorised);
+    if (Categorised && Categorised.includes(animal)) {
       if (Categories.Herbivorous.includes(animal)) {
         return "Herbivorous";
       } else if (Categories.Carnivorous.includes(animal)) {

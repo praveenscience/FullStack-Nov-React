@@ -47,6 +47,8 @@ const CategoriesPage = ({
               See={See}
               SeeHandler={SeeHandler}
               ToggleAnimalCat={ToggleAnimalCat}
+              Categories={Categories}
+              Categorised={Categorised}
             />
           </div>
         </Card>
@@ -62,6 +64,8 @@ const CategoriesPage = ({
               See={See}
               SeeHandler={SeeHandler}
               ToggleAnimalCat={ToggleAnimalCat}
+              Categories={Categories}
+              Categorised={Categorised}
             />
           </div>
         </Card>
@@ -77,6 +81,8 @@ const CategoriesPage = ({
               See={See}
               SeeHandler={SeeHandler}
               ToggleAnimalCat={ToggleAnimalCat}
+              Categorised={Categorised}
+              Categorised={Categorised}
             />
           </div>
         </Card>
