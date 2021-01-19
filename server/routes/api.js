@@ -10,7 +10,11 @@ app.get("/animals", (req, res) => {
 });
 app.get("/animals/:AnimalID", (req, res) => {
   const AnimalID = +req.params.AnimalID;
-  res.json(animals[AnimalID]);
+  if (!animals[AnimalID]) {
+    res.status(404).json("Error, Animal Not Found!");
+  } else {
+    res.json(animals[AnimalID]);
+  }
 });
 app.post("/animals", (req, res) => {
   res.json("Hey, you posted to animals!");
