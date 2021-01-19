@@ -16,8 +16,11 @@ app.get("/animals/:AnimalID", (req, res) => {
     res.json(animals[AnimalID]);
   }
 });
-app.post("/animals", (req, res) => {
-  res.json("Hey, you posted to animals!");
+app.post("/animals", express.json(), (req, res) => {
+  res.json({
+    message: "Hey, you posted to animals!",
+    body: req.body
+  });
 });
 app.patch("/animals", (req, res) => {
   res.json("Hey, you patched to animals!");
