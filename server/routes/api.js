@@ -33,12 +33,18 @@ app.post("/animals", express.json(), (req, res) => {
     }
   }
 });
-app.put("/animals/:AnimalID", (req, res) => {
+app.put("/animals/:AnimalID", express.json(), (req, res) => {
   const AnimalID = +req.params.AnimalID;
   if (!animals[AnimalID]) {
     res.status(404).json("Error, Animal Not Found!");
   } else {
-    // Implement what needs to be done.
+    const { Name, Image } = req.body;
+    if (!Name || !Image) {
+      res.status(400).json("Whoops, please send both Name and Image parameters.");
+    } else {
+      animals[AnimalID] = { Name, Image };
+      res.status(202).json("Updated animal.");
+    }
   }
   res.json("Hey, you put to animals!");
 });
