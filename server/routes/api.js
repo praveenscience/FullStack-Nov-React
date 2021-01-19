@@ -18,10 +18,14 @@ app.get("/animals/:AnimalID", (req, res) => {
 });
 app.post("/animals", express.json(), (req, res) => {
   const { Name, Image } = req.body;
-  res.json({
-    message: "Hey, you posted to animals!",
-    Animal: { Name, Image }
-  });
+  if (!Name || !Image) {
+    res.status(400).json("Whoops, please send both Name and Image parameters.");
+  } else {
+    res.json({
+      message: "Hey, you posted to animals!",
+      Animal: { Name, Image }
+    });
+  }
 });
 app.patch("/animals", (req, res) => {
   res.json("Hey, you patched to animals!");
