@@ -21,10 +21,16 @@ app.post("/animals", express.json(), (req, res) => {
   if (!Name || !Image) {
     res.status(400).json("Whoops, please send both Name and Image parameters.");
   } else {
-    res.json({
-      message: "Hey, you posted to animals!",
-      Animal: { Name, Image }
-    });
+    const Found = animals.find(a => a.Name.toLowerCase().trim() === Name.toLowerCase().trim() || a.Image.toLowerCase().trim() === Image.toLowerCase().trim());
+    if (Found) {
+      res.status(409).json("Animal or Image already exists.");
+    } else {
+      animals.push({ Name, Image });
+      res.status(201).json({
+        message: "Successfully added animal!",
+        Animal: { Name, Image }
+      });
+    }
   }
 });
 app.patch("/animals", (req, res) => {
