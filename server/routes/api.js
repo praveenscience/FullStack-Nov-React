@@ -8,6 +8,10 @@ app.get("/", (req, res) => {
 app.get("/animals", (req, res) => {
   res.json(animals);
 });
+app.get("/animals/:AnimalID", (req, res) => {
+  const AnimalID = +req.params.AnimalID;
+  res.json(animals[AnimalID]);
+});
 app.post("/animals", (req, res) => {
   res.json("Hey, you posted to animals!");
 });
