@@ -33,13 +33,22 @@ app.post("/animals", express.json(), (req, res) => {
     }
   }
 });
-app.patch("/animals", (req, res) => {
-  res.json("Hey, you patched to animals!");
-});
-app.put("/animals", (req, res) => {
+app.put("/animals/:AnimalID", (req, res) => {
+  const AnimalID = +req.params.AnimalID;
+  if (!animals[AnimalID]) {
+    res.status(404).json("Error, Animal Not Found!");
+  } else {
+    // Implement what needs to be done.
+  }
   res.json("Hey, you put to animals!");
 });
-app.delete("/animals", (req, res) => {
+app.delete("/animals/:AnimalID", (req, res) => {
+  const AnimalID = +req.params.AnimalID;
+  if (!animals[AnimalID]) {
+    res.status(404).json("Error, Animal Not Found!");
+  } else {
+    // Implement what needs to be done.
+  }
   res.json("Hey, you deleted animals!");
 });
 
