@@ -17,9 +17,10 @@ app.get("/animals/:AnimalID", (req, res) => {
   }
 });
 app.post("/animals", express.json(), (req, res) => {
+  const { Name, Image } = req.body;
   res.json({
     message: "Hey, you posted to animals!",
-    body: req.body
+    Animal: { Name, Image }
   });
 });
 app.patch("/animals", (req, res) => {
