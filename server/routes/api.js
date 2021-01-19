@@ -53,7 +53,8 @@ app.delete("/animals/:AnimalID", (req, res) => {
   if (!animals[AnimalID]) {
     res.status(404).json("Error, Animal Not Found!");
   } else {
-    // Implement what needs to be done.
+    animals[AnimalID] = undefined;
+    res.status(204).json("Deleted animal.");
   }
   res.json("Hey, you deleted animals!");
 });
