@@ -4,6 +4,7 @@
   "description": "Server side component for our Client.",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -12,5 +13,8 @@
     "ExpressJS"
   ],
   "author": "Me",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
