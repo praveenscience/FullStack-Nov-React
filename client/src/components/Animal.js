@@ -55,9 +55,10 @@ const Animal = ({
               <option value="Carnivorous">Carnivorous</option>
               <option value="Omnivorous">Omnivorous</option>
             </select>
-            <button className="btn btn-danger btn-sm form-control mt-2">
-              Delete
-            </button>
+            <div className="btn-group mt-2 d-flex">
+              <button className="btn btn-info btn-sm">Edit</button>
+              <button className="btn btn-danger btn-sm">Delete</button>
+            </div>
           </div>
         )}
       </Card>
