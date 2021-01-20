@@ -21,6 +21,7 @@ const AnimalsLister = ({
       .filter(AnimalsFilter)
       .map(animal => (
         <Animal
+          AnimalId={animal.AnimalId}
           key={animal.Name}
           Image={animal.Image}
           Name={animal.Name}
