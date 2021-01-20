@@ -23,6 +23,12 @@ const Animal = ({
     console.log(e.target.value, Name);
     ToggleAnimalCat(e.target.value, Name);
   };
+  const handleEdit = e => {
+    e.preventDefault();
+  };
+  const handleDelete = e => {
+    e.preventDefault();
+  };
   return (
     <div className="Animals-Item py-3 col-4">
       <Card Image={Image} ImgAlign="top" Title={Name}>
