@@ -21,7 +21,11 @@ app.post("/animals", express.json(), (req, res) => {
   if (!Name || !Image) {
     res.status(400).json("Whoops, please send both Name and Image parameters.");
   } else {
-    const Found = animals.find(a => a.Name.toLowerCase().trim() === Name.toLowerCase().trim() || a.Image.toLowerCase().trim() === Image.toLowerCase().trim());
+    const Found = animals.find(
+      a =>
+        a.Name.toLowerCase().trim() === Name.toLowerCase().trim() ||
+        a.Image.toLowerCase().trim() === Image.toLowerCase().trim()
+    );
     if (Found) {
       res.status(409).json("Animal or Image already exists.");
     } else {
@@ -40,7 +44,9 @@ app.put("/animals/:AnimalID", express.json(), (req, res) => {
   } else {
     const { Name, Image } = req.body;
     if (!Name || !Image) {
-      res.status(400).json("Whoops, please send both Name and Image parameters.");
+      res
+        .status(400)
+        .json("Whoops, please send both Name and Image parameters.");
     } else {
       animals[AnimalID] = { Name, Image };
       res.status(202).json("Updated animal.");
@@ -56,7 +62,6 @@ app.delete("/animals/:AnimalID", (req, res) => {
     animals[AnimalID] = undefined;
     res.status(204).json("Deleted animal.");
   }
-  res.json("Hey, you deleted animals!");
 });
 
 module.exports = app;
