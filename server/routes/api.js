@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express.Router();
-const animals = require("../constants/animals.json");
+const animals = require("../constants/animals.json").map((a, AnimalId) => ({
+  ...a,
+  AnimalId
+}));
 
 app.get("/", (req, res) => {
   res.json("Hello API!");
