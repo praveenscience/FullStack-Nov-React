@@ -1,4 +1,5 @@
 import React from "react";
+import { DeleteAnimal } from "../services/Animals";
 import Card from "./Card";
 
 const Animal = ({
@@ -29,6 +30,17 @@ const Animal = ({
   };
   const handleDelete = e => {
     e.preventDefault();
+    DeleteAnimal(AnimalId)
+      .then(res => {
+        if (res.status === 204) {
+          window.alert("Animal Deleted!");
+        } else {
+          window.alert("Error " + res.status);
+        }
+      })
+      .catch(err => {
+        window.alert("Error " + err.response.status);
+      });
   };
   return (
     <div className="Animals-Item py-3 col-4">
