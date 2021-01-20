@@ -23,7 +23,6 @@ const Animal = ({
     SeeHandler(Name);
   };
   const handleChangeCat = e => {
-    console.log(e.target.value, Name);
     ToggleAnimalCat(e.target.value, Name);
   };
   const handleEdit = e => {

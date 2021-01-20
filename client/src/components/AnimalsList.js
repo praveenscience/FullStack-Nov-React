@@ -47,7 +47,6 @@ const AnimalsList = ({ List, reloadAnimals }) => {
     ...Categories.Omnivorous
   ];
   const findAnimalCat = animal => {
-    console.log(Categorised);
     if (Categorised && Categorised.includes(animal)) {
       if (Categories.Herbivorous.includes(animal)) {
         return "Herbivorous";
