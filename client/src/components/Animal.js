@@ -62,8 +62,12 @@ const Animal = ({
               <option value="Omnivorous">Omnivorous</option>
             </select>
             <div className="btn-group mt-2 d-flex">
-              <button className="btn btn-info btn-sm">Edit</button>
-              <button className="btn btn-danger btn-sm">Delete</button>
+              <button className="btn btn-info btn-sm" onClick={handleEdit}>
+                Edit
+              </button>
+              <button className="btn btn-danger btn-sm" onClick={handleDelete}>
+                Delete
+              </button>
             </div>
           </div>
         )}
