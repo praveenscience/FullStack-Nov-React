@@ -55,7 +55,6 @@ app.put("/animals/:AnimalID", express.json(), (req, res) => {
       res.status(202).json("Updated animal.");
     }
   }
-  res.json("Hey, you put to animals!");
 });
 app.delete("/animals/:AnimalID", (req, res) => {
   const AnimalID = +req.params.AnimalID;
