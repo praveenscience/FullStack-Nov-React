@@ -9,13 +9,16 @@ class App extends Component {
     Animals: [],
     Loaded: false
   };
-  componentDidMount() {
+  reloadAnimals = () => {
     GetAllAnimals().then(res =>
       this.setState({
         Animals: res.data,
         Loaded: true
       })
     );
+  };
+  componentDidMount() {
+    this.reloadAnimals();
   }
   render() {
     const { Animals, Loaded } = this.state;
