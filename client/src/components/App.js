@@ -12,7 +12,7 @@ class App extends Component {
   reloadAnimals = () => {
     GetAllAnimals().then(res =>
       this.setState({
-        Animals: res.data,
+        Animals: res.data.filter(Boolean),
         Loaded: true
       })
     );
