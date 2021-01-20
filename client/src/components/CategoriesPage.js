@@ -12,7 +12,8 @@ const CategoriesPage = ({
   SeeHandler,
   ToggleAnimalCat,
   Categorised,
-  findAnimalCat
+  findAnimalCat,
+  reloadAnimals
 }) => {
   const [EditMode, setEditMode] = useState(false);
   const [Expanded, setExpanded] = useState({
@@ -76,6 +77,7 @@ const CategoriesPage = ({
                 Categories={Categories}
                 Categorised={Categorised}
                 findAnimalCat={findAnimalCat}
+                reloadAnimals={reloadAnimals}
               />
             </div>
           )}

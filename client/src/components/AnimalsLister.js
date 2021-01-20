@@ -10,7 +10,8 @@ const AnimalsLister = ({
   See,
   SeeHandler,
   ToggleAnimalCat,
-  findAnimalCat
+  findAnimalCat,
+  reloadAnimals
 }) => {
   const AnimalsFilter = animal =>
     Query.length === 0
@@ -31,6 +32,7 @@ const AnimalsLister = ({
           Saw={See.includes(animal.Name)}
           ToggleAnimalCat={ToggleAnimalCat}
           Category={ToggleAnimalCat ? findAnimalCat(animal.Name) : null}
+          reloadAnimals={reloadAnimals}
         />
       ))
   ) : (

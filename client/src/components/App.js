@@ -30,7 +30,14 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              {Loaded ? <AnimalsList List={Animals} /> : <Loader />}
+              {Loaded ? (
+                <AnimalsList
+                  List={Animals}
+                  reloadAnimals={this.reloadAnimals}
+                />
+              ) : (
+                <Loader />
+              )}
             </div>
           </div>
         </div>

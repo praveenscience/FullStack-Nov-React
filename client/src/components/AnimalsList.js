@@ -5,7 +5,7 @@ import Search from "./Search";
 import AnimalsLister from "./AnimalsLister";
 import CategoriesPage from "./CategoriesPage";
 
-const AnimalsList = ({ List }) => {
+const AnimalsList = ({ List, reloadAnimals }) => {
   const [Query, setQuery] = useState("");
   const [Liked, setLiked] = useState(LoadFromLS("Liked", []));
   const [See, setSee] = useState(LoadFromLS("See", []));
@@ -156,7 +156,8 @@ const AnimalsList = ({ List }) => {
                   SeeHandler,
                   ToggleAnimalCat,
                   Categorised,
-                  findAnimalCat
+                  findAnimalCat,
+                  reloadAnimals
                 }}
                 {...rp}
               />

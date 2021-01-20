@@ -11,7 +11,8 @@ const Animal = ({
   Saw,
   SeeHandler,
   ToggleAnimalCat,
-  Category
+  Category,
+  reloadAnimals
 }) => {
   const handleLike = e => {
     e.preventDefault();
@@ -35,6 +36,7 @@ const Animal = ({
         .then(res => {
           if (res.status === 204) {
             window.alert("Animal Deleted!");
+            reloadAnimals();
           } else {
             window.alert("Error " + res.status);
           }
