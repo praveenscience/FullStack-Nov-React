@@ -10,9 +10,9 @@ class App extends Component {
     Loaded: false
   };
   componentDidMount() {
-    GetAllAnimals().then(Animals =>
+    GetAllAnimals().then(res =>
       this.setState({
-        Animals,
+        Animals: res.data,
         Loaded: true
       })
     );

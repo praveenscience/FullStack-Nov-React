@@ -1,1 +1,3 @@
-export const GetAllAnimals = () => fetch("/api/animals").then(res => res.json());
+import Axios from "axios";
+
+export const GetAllAnimals = () => Axios.get("/api/animals");
